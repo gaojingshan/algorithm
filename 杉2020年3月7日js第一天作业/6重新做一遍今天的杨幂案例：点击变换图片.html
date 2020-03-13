@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="yangmi">杨幂</button>
+    <button id="xiaozhan"">肖战</button>
+    <p>
+        <img src=" images/xiaozhan.jpg" alt="" id="img">
+    </p>
+        <script>
+            var yangmi = document.getElementById('yangmi');
+            var xiaozhan = document.getElementById('xiaozhan');
+            var img = document.getElementById('img');
+            yangmi.onclick = function () {
+                img.src = 'images/yangmi.jpg';
+            }
+            xiaozhan.onclick = function () {
+                img.src = 'images/xiaozhan.jpg';
+            }
+        </script>
+</body>
+
+</html>

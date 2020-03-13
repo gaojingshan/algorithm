@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/yangmi.jpg" alt="" id="img">
+    <script>
+        var img = document.getElementById('img');
+        img.onmouseenter = function () {
+            this.src = 'images/xiaozhan.jpg';
+        }
+        img.onmouseleave = function () {
+            this.src = 'images/yangmi.jpg';
+        }
+    </script>
+</body>
+
+</html>

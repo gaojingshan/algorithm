@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="kuang" placeholder="请输入年份">
+    <button id="btn">查看您输入的是不是闰年</button>
+    <h1 id="h1"></h1>
+    <script>
+        /* 闰年的判断规则是，只要符合下面两个条件之一的，就是闰年：
+        1、能被4整除而不能被100整除。
+        2、能被100整除也能被400整除
+        根据这个条件，闰年基本上是4年一次，但是也有例外。
+        比如1892年是闰年、1896年是闰年、1900年不是闰年、1904年是闰年。
+        请用户输入年份，点击按钮之后，显示是否为闰年。 */
+        var kuang = document.getElementById('kuang');
+        var btn = document.getElementById('btn');
+        var h1 = document.getElementById('h1');
+        btn.onclick = function () {
+            var k = Number(kuang.value);//获取文本框的值并转成数字
+            // 方法1
+            /* if ((k % 4 == 0 && k % 100 != 0) || (k % 100 == 0 && k % 400 == 0)) {
+                h1.innerHTML = k + '是闰年';
+            } else {
+                h1.innerHTML = k + '不是闰年';
+            } */
+            // 方法2
+            if(k % 100 == 0){
+                if(k % 400 == 0){
+                    h1.innerHTML = k + '是闰年';
+                }else{
+                    h1.innerHTML = k + '不是闰年';
+                }
+            }else{
+                if(k % 4 == 0){
+                    h1.innerHTML = k + '是闰年';
+                }else{
+                    h1.innerHTML = k + '不是闰年';
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        b {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <input type="text" id="weight" placeholder="请输入体重(kg)" >
+    </p>
+    <p>
+        <input type="text" id="height" placeholder="请输入身高(M)" >
+    </p>
+    <button id="btn">计算</button>
+    <!-- <h1 id="h1"></h1> -->
+    <div id="box"></div>
+    <script>
+        // 之前作业做过BMI的作业，今天我们将它深入一步。请编写程序，让用户输入身高和体重，然后根据下表显示用户的胖瘦程度。注意，不是显示BMI数值了，而是中文“偏瘦”、“正常”、“偏胖”或者“过度肥胖”。  体质指数（BMI）=体重（kg）÷身高^2（m）
+        var weight = document.getElementById('weight');
+        var height = document.getElementById('height');
+        var btn = document.getElementById('btn');
+        var box = document.getElementById('box');
+        btn.onclick = function () {
+            //获取体重
+            var w = Number(weight.value);
+            //获取身高
+            var h = Number(height.value);
+            // 计算bmi指数(保留两位小数)
+            var bmi = Math.round(w / Math.pow(h, 2) * 10) / 10;
+            console.log(bmi);
+            var Chinese = '';
+            if (bmi <= 18.5) {
+                // box.innerHTML = '偏瘦，像个猴子，多吃点';
+                Chinese = '偏瘦';
+            } else if (bmi < 25) {
+                Chinese = '正常';
+                // box.innerHTML = '正常，继续保持';
+            } else if (bmi < 30) {
+                Chinese = '偏胖';
+                // box.innerHTML = '偏胖，是时候多运动运动了';
+            } else {
+                Chinese = '过度肥胖';
+                // box.innerHTML = '过度肥胖';
+            }
+            // 正常bmi 为19，正常体重
+            var w_hl = Math.round(19 * Math.pow(h, 2) * 10) / 10;
+            // 测试自己体重与标准体重相差多少
+            var ww=Math.round((w - w_hl)*10)/10;
+            box.innerHTML = '你的体型是：<b>' + Chinese + '</b><br>你的BMI指数是' + bmi + '<br>根据您的身高，推算您的合理体重是' + w_hl + '公斤<br>您还差' + ww + '公斤';
+        }
+
+    </script>
+</body>
+
+</html>

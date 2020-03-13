@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 公园的门票规则是：
+    平日 成年人50元  儿童30元
+    周末 成年人80元  儿童60元
+    请实现功能。 -->
+
+    <p>请问您是平日入园还是周末入园？</p>
+    <label><input type="radio" name="sex" id="pr">平日</label>
+    <label><input type="radio" name="sex" id="zm">周末</label>
+    <p>
+        请输入成年人数量：<input type="text" id="people">
+    </p>
+    <p>
+        请输入儿童数量：<input type="text" id="children">
+    </p>
+    <button id="btn">计算</button>
+    <div id="h1">票价总计：0元</div>
+    <script>
+        var pr = document.getElementById('pr');
+        var zm = document.getElementById('zm');
+        var people = document.getElementById('people');
+        var children = document.getElementById('children');
+        var btn = document.getElementById('btn');
+        var h1 = document.getElementById('h1');
+        btn.onclick = function () {
+            var people2 = Number(people.value);//成年人数量
+            var children2 = Number(children.value);//儿童数量
+            // 定义大人和小孩的票价
+            var daren_price, xiaohai_price;
+            if (pr.checked) {
+                // h1.innerHTML = '票价总计：' + (50 * people2 + 30 * children2) + '元';
+                daren_price = 50;
+                xiaohai_price = 30;
+            } else if (zm.checked) {
+                // h1.innerHTML = '票价总计：' + (80 * people2 + 60 * children2) + '元';
+                daren_price = 80;
+                xiaohai_price = 60;
+            } else {
+                alert('请选择什么时候入园？');
+            }
+            var zong = daren_price * people2 + xiaohai_price * children2;
+            h1.innerHTML = '成人票价' + daren_price + '元/人,' + people2 + '人共' + (daren_price * people2) + '元<br>小孩票价' + xiaohai_price + '元/人,' + children2 + '人共' + (xiaohai_price * children2) + '元<br><b>总计:' + zong + '元</b>'
+        }
+    </script>
+</body>
+
+</html>

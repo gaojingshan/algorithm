@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="height" placeholder="请输入身高,以米(M)为单位">
+    <input type="text" id="weight" placeholder="请输入体重,以千克(KG)为单位">
+    <button id="btn">点击</button>
+    <p>您的BMI身体指数：<span id="span"></span></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <script>
+        // 页面上放置两个文本框，一个按钮。要求用户输入自己的身高和体重，点击按钮之后，在页面上显示出他的BMI身体指数。BMI = 体重 ÷ 身高的平方  正常：18.5-23.9
+        var height = document.getElementById('height');
+        var weight = document.getElementById('weight');
+        var btn = document.getElementById('btn');
+        var span = document.getElementById('span');
+        var p2 = document.getElementById('p2');
+        var p3 = document.getElementById('p3');
+        btn.onclick = function () {
+            var h = Number(height.value);
+            var w = Number(weight.value);
+            var bmi = w / Math.pow(h, 2);
+            span.innerHTML = bmi;
+            //计算你的身高的标准体重
+            var zc1 = 18.5 * Math.pow(h, 2);
+            var zc2 = 23.9 * Math.pow(h, 2);
+            p2.innerHTML = '您的身高标准体重是：' + zc1 + '~~' + zc2 + '之间';
+            // 你的体重和标准体重相差多少
+            if (w <= zc2 && w >= zc1) {
+                p3.innerHTML = '您是正常体重，继续保持';
+            } else if (w<zc1){
+                p3.innerHTML = '您太轻了，多吃点吧';
+            }else{
+                p3.innerHTML = '兄弟，该减肥了！';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

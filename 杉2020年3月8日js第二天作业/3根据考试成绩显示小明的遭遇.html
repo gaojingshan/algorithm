@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        <input type="text" id="kuang1" placeholder="请输入数学成绩">
+    </p>
+    <p>
+        <input type="text" id="kuang2" placeholder="请输入英语成绩">
+    </p>
+    <button id="btn">点击</button>
+    <h1 id="h1"></h1>
+    <script>
+        // 假设小明的数学成绩达到80分，那么他会得到苹果手机。如果英语成绩达到90分，他会得到笔记本电脑。如果两个成绩都没有达到，则会挨打。请做两个输入框，分别输入数学成绩和英语成绩，点击按钮后，显示小明的遭遇。
+        var kuang1 = document.getElementById('kuang1');
+        var kuang2 = document.getElementById('kuang2');
+        var btn = document.getElementById('btn');
+        var h1 = document.getElementById('h1');
+        btn.onclick = function () {
+            var math = Number(kuang1.value);
+            var eng = Number(kuang2.value);
+
+            if(math >= 80 && eng >= 90){
+                h1.innerHTML = '他会得到苹果手机和笔记本电脑';
+            }else if(math >= 80) {
+                h1.innerHTML = '他会得到苹果手机';
+            }else if (eng >= 90) {
+                h1.innerHTML = '他会得到笔记本电脑';
+            }else{
+                h1.innerHTML = '会挨打';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

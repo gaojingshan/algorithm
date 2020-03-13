@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="kuang" placeholder="请输入摄氏温度">
+    <button id="btn">点击</button>
+    <h1 id="h1"></h1>
+    <script>
+        // 页面上放置一个文本框，一个按钮。用户输入摄氏温度，请显示对应的华氏温度。
+        // 1F = C*9/5 + 32  C是摄氏温度,F是华氏温度
+        var kuang = document.getElementById('kuang');
+        var btn = document.getElementById('btn');
+        var h1 = document.getElementById('h1');
+        btn.onclick = function () {
+            var c = Number(kuang.value);
+            var f = c * 9 / 5 + 32;
+            h1.innerHTML = '对应的华氏温度是：' + f;
+        }
+    </script>
+</body>
+
+</html>

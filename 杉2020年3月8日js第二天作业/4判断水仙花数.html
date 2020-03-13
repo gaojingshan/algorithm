@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="kuang" placeholder="请输入一个3位数">
+    <button id="btn">点击</button>
+    <h1 id="h1"></h1>
+    <script>
+        /* 水仙花数是指一个 3 位数，它的每个位上的数字的 3次幂之和等于它本身。比如153就是水仙花数，因为1的立方 + 5的立方 + 3的立方就等于153本身。
+        请用户输入一个3位数，点击按钮后，显示它是否是水仙花数。 */
+        var kuang = document.getElementById('kuang');
+        var btn = document.getElementById('btn');
+        var h1 = document.getElementById('h1');
+        btn.onclick = function () {
+            // console.log(kuang.value,typeof(kuang.value));
+            var kuang2 = Number(kuang.value);
+            var ge = kuang2 % 10;
+            var shi = Math.floor(kuang2 / 10) % 10;
+            var bai = Math.floor(kuang2 / 100);
+            // 套用水仙花的公式
+            var floor = Math.pow(ge, 3) + Math.pow(shi, 3) + Math.pow(bai, 3);
+            if (floor == kuang2) { 
+                h1.innerHTML = kuang2 + '是水仙花数';
+            } else {
+                h1.innerHTML = kuang2 + '不是水仙花数';
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="wbk" placeholder="请输入正六边形的边长">
+    <button id="btn">点击</button>
+    <p>正六边形的面积是：<span id="span"></span></p>
+    <script>
+        // 页面上请放置一个文本框、一个按钮，要求用户输入正六边形的边长，点击按钮之后，在页面上显示出正六边形的面积。S=(3x√3/2)x(a²)
+        var wbk = document.getElementById('wbk');
+        var btn = document.getElementById('btn');
+        var span = document.getElementById('span');
+        btn.onclick = function () {
+            var a = Number(wbk.value);
+            var s = 3 * Math.sqrt(3) / 2 * Math.pow(a, 2);
+            span.innerHTML = s;
+        }
+
+    </script>
+</body>
+
+</html>
