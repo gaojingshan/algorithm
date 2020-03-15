@@ -3,4 +3,6 @@ var a = Math.sqrt(2);
 for (var i = 1; i <= 4; i++) {
   a = Math.sqrt(a / 2);
 }
-console.log(a);
+// console.log(a);
+console.log('哈哈');
+
