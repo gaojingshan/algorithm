@@ -6,4 +6,4 @@ while (true) {
     break;
   }
 }
-console.log(`满足n的平方大于12000的n的最小值是${n}`);
+console.log(`满足n的平方大于12000的n的最小值是${n},平方结果为${n * n}`);

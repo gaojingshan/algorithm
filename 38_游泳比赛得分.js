@@ -3,7 +3,7 @@ var arr = [39, 45, 42, 44, 51, 48];
 var min = arr[0]; //最低分
 var max = arr[0]; //最高分
 var sum = 0; //计算总分
-var pingJun = 0; //计算平均分
+var average = 0; //计算平均分
 //循环遍历比赛分数
 for (var i = 0; i < arr.length; i++) {
   if (arr[i] < min) {
@@ -13,5 +13,5 @@ for (var i = 0; i < arr.length; i++) {
   }
   sum += arr[i];
 }
-pingJun = (sum - min - max) / (arr.length - 2);
-console.log(`这个选手最终得分是${pingJun}`);
+average = (sum - min - max) / (arr.length - 2);
+console.log(`这个选手最终得分是${average}`);
