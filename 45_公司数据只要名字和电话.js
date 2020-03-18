@@ -12,5 +12,5 @@ for (var i = 0; i < arr.length; i++) {
   // console.log(_arr[0], _arr[3]);
 
   // 追加文件
-  fs.appendFileSync('./老板你要的结果.txt',_arr[0]+' '+_arr[3]+'\r\n');
+  fs.appendFileSync('./45_老板你要的结果.txt',_arr[0]+' '+_arr[3]+'\r\n');
 }
