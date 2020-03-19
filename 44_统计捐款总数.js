@@ -2,7 +2,7 @@ var fs = require('fs');
 var content = fs.readFileSync('./44_捐款记录.txt');
 // 读取文件，为带有换行符的字符串
 var str = content.toString();
-//按换行符拆成字符串
+//按换行符把字符串拆成数组
 var arr = str.split('\r\n');
 
 for (var i = 0, sum = 0; i < arr.length; i++) {

@@ -7,20 +7,12 @@ var arr = content.split('\r\n');
 for (var i = 0, chinese = 0, math = 0, english = 0; i < arr.length; i++) {
   // 把每一项按空格拆分
   var _arr = arr[i].split(' ');
-  // 计算语文的及格人数
-  if (Number(_arr[3]) >= 60) {
-    chinese++;
-  }
-  // 计算数学的及格人数
-  if (Number(_arr[5]) >= 60) {
-    math++;
-  }
-  // 计算英语的及格人数
-  if (Number(_arr[7]) >= 60) {
-    english++;
-  }
+  // 计算语文,数学,英语的及格人数
+  if (Number(_arr[3]) >= 60) chinese++;
+  if (Number(_arr[5]) >= 60) math++;
+  if (Number(_arr[7]) >= 60) english++;
 }
-// 统计语文、数学和英语的及格率
+// 统计语文、数学和英语的及格率,换算成%，并保留两位小数
 var _chinese = Math.round((chinese / arr.length) * 10000) / 100;
 var _math = Math.round((math / arr.length) * 10000) / 100;
 var _english = Math.round((english / arr.length) * 10000) / 100;
