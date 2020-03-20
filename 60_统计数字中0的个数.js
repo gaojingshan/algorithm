@@ -2,10 +2,10 @@
 
 // 统计数字中0的个数
 function calcZero(n) {
-  // 把数字转成字符串拆成数组
-  var arr = n.toString().split('');
-  for (var i = 0, sum = 0; i < arr.length; i++) {
-    if (arr[i] == 0) {
+  // 把数字转成字符串遍历
+  var str = n.toString();
+  for (var i = 0, sum = 0; i < str.length; i++) {
+    if (str[i] == 0) {
       sum++;
     }
   }
