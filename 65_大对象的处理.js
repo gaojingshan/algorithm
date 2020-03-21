@@ -957,14 +957,9 @@ function price(type) {
       sum += goods[i].price;
     }
     return sum;
-  }
-  console.log(
-    `健康坚果、坚果礼盒、果干蜜饯、糖巧布丁、肉食卤味、豆干辣条、面包蛋糕、饼干膨化、鱿鱼海味的属于该类型的全部商品的总价格分别是${price(
-      '健康坚果'
-    )},${price('坚果礼盒')},${price('果干蜜饯')},${price('糖巧布丁')},${price(
-      '肉食卤味'
-    )},${price('豆干辣条')},${price('面包蛋糕')},${price('饼干膨化')},${price(
-      '鱿鱼海味'
-    )}`
-  );
+}
+for (var k in obj.products) {
+    console.log(`${k}总价是${price(k)}`);
+}
+  
   
