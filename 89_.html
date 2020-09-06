@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <button data-n="1">按我</button>
+        <button data-n="2">按我</button>
+        <button data-n="3">按我</button>
+        <button data-n="4">按我</button>
+    </div>
+    <script type="text/javascript">
+	    var box = document.getElementById('box');
+
+	    box.onclick = function(e) {
+	        console.log(e.target.nodeName);
+	        // 判断你点击的是否是按钮
+	        if (e.target.nodeName.toLowerCase() == 'button') {
+	            // 弹出它自己的data-n值
+	            var n = e.target.getAttribute('data-n');
+	            alert(n);
+	        }
+	    }
+    </script>
+</body>
+
+</html>

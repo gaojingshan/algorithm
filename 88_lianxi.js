@@ -1,10 +1,20 @@
-var obj1 = [1, 2, [1, 2, {a: 1}], 3, 4];
-// var obj1 = [1, 2, 3, 4];
-var obj2 = [];
-for (var i=0; i < obj1.length; i++) {
-  obj2.push(obj1[i]);
-}
-console.log(obj2 == obj1);
+var arr = [1, 2, 3, 4];
+var arr2 = [
+  {
+    math: 100,
+    chinese: 90,
+  },
+  {
+    math: 88,
+    chinese: 100,
+  },
+];
+var arr3 = {
+  math: 100,
+  chinese: 90,
+};
 
-
-console.log(obj1[2] == obj2[2]);
+console.log(Array.isArray(arr));
+console.log(Array.isArray(arr3));
+console.log(typeof(arr));
+console.log(typeof(arr3));
