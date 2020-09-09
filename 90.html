@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box">
+      <button id="btn">按我后面添加</button>
+      <button id="btn2">按我前面添加</button>
+      <ul id="list">
+        <li>6</li>
+        <li>5</li>
+        <li>4</li>
+        <li>3</li>
+        <li>2</li>
+        <li>1</li>
+      </ul>
+    </div>
+    <script>
+      var box = document.getElementById('box');
+      var btn = document.getElementById('btn');
+      var btn2 = document.getElementById('btn2');
+      var list = document.getElementById('list');
+      var a = 0;
+      btn.onclick = function () {
+        var li = document.createElement('li');
+        li.innerHTML = ++a;
+        list.appendChild(li);
+      };
+      btn2.onclick = function () {
+        var li = document.createElement('li');
+        li.innerHTML = --a;
+        list.insertBefore(li, list.firstChild);
+      };
+      list.onclick = function (e) {
+        console.log(e);
+        e.target.nextElementSibling.style.background = 'red';
+      };
+    </script>
+  </body>
+</html>
