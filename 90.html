@@ -6,38 +6,26 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="box">
-      <button id="btn">按我后面添加</button>
-      <button id="btn2">按我前面添加</button>
-      <ul id="list">
-        <li>6</li>
-        <li>5</li>
-        <li>4</li>
-        <li>3</li>
-        <li>2</li>
-        <li>1</li>
-      </ul>
-    </div>
     <script>
-      var box = document.getElementById('box');
-      var btn = document.getElementById('btn');
-      var btn2 = document.getElementById('btn2');
-      var list = document.getElementById('list');
-      var a = 0;
-      btn.onclick = function () {
-        var li = document.createElement('li');
-        li.innerHTML = ++a;
-        list.appendChild(li);
-      };
-      btn2.onclick = function () {
-        var li = document.createElement('li');
-        li.innerHTML = --a;
-        list.insertBefore(li, list.firstChild);
-      };
-      list.onclick = function (e) {
-        console.log(e);
-        e.target.nextElementSibling.style.background = 'red';
-      };
+      // 偏函数
+      // 一个函数能够返回不同功能的函数，就是偏函数
+      function cetiwen(biaozhun) {
+        return function (tiwen) {
+          if (tiwen > biaozhun) {
+            console.log('发烧了');
+          } else {
+            console.log('正常');
+          }
+        };
+      }
+      var bz1 = cetiwen(36.7);
+      var bz2 = cetiwen(37.5);
+      bz1(36.8);
+      bz2(36.8);
+      
+      // 纯函数
+      // 不改变传入的参数值，并且多次传入的参数相同，那么结果一定是相同的。
+      // 不改变传入的参数值，并且多次传入的参数相同，那么结果一定是相同的。
     </script>
   </body>
 </html>
